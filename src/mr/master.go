@@ -33,13 +33,14 @@ type State int //任务阶段
 type MasterTaskStatus int //Master任务状态
 
 // lab1 add
+// map reduce共用一个 task结构
 type Task struct {
-	Input         string
-	TaskState     State
-	NReducer      int
-	TaskNumber    int
-	Intermediates []string
-	Output        string
+	Input         string   // map : 输入文件
+	TaskState     State    // 状态: Map | Reduce | Exit | Wait
+	NReducer      int      // map : 记录有多少个Reducer,用于分片
+	TaskNumber    int      // task id
+	Intermediates []string // map: 输出分片文件名, reducer: 输入文件
+	Output        string   // reduce: 输出文件
 }
 
 // lab1 add
@@ -238,6 +239,7 @@ func (m *Master) TaskCompleted(task *Task, reply *ExampleReply) error {
 	// worker写在同一个磁盘文件上,对于重复的结果要丢弃
 	// master记录中该task已经完成
 	// 或者该task的工作状态和master的状态不一致
+	// 从第一个完成的worker获取结果，将后序的backup结果丢弃
 	if task.TaskState != m.MasterPhase || m.TaskMeta[task.TaskNumber].TaskStatus == Completed {
 		return nil
 	}

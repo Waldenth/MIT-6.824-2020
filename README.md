@@ -21,4 +21,4 @@
 
 ## Papers
 
-- [x] [mapreduce)](https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf)
+- [x] [mapreduce](https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf)

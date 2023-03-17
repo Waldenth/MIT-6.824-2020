@@ -1,0 +1,16 @@
+*** Starting wc test.
+2023/03/17 16:09:16 rpc.Register: method "Done" has 1 input parameters; needs exactly three
+--- wc test: PASS
+*** Starting indexer test.
+2023/03/17 16:12:16 rpc.Register: method "Done" has 1 input parameters; needs exactly three
+--- indexer test: PASS
+*** Starting map parallelism test.
+2023/03/17 16:15:16 rpc.Register: method "Done" has 1 input parameters; needs exactly three
+--- map parallelism test: PASS
+*** Starting reduce parallelism test.
+2023/03/17 16:18:16 rpc.Register: method "Done" has 1 input parameters; needs exactly three
+--- reduce parallelism test: PASS
+*** Starting crash test.
+2023/03/17 16:21:16 rpc.Register: method "Done" has 1 input parameters; needs exactly three
+--- crash test: PASS
+*** PASSED ALL TESTS

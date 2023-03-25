@@ -263,7 +263,7 @@ func ConcurrentChannel(url string, fetcher Fetcher) {
 
 `RPC`用于`client`与`server`进行远程通信的一种调用框架，其基本组成如下图所示。
 
-![img](assets/473fe1d1104141aabc75412acf9c3a44.webp)
+![img](rpc.assets/473fe1d1104141aabc75412acf9c3a44.webp)
 
 `RPC`框架调用流程如下：
 
